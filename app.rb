@@ -1,15 +1,16 @@
 require 'sinatra'
-require 'twilio-ruby'
+# require 'twilio-ruby'
 
-post 'message' do
-  number = params["From"]
-  body = params["Body"]
+post '/message' do
+  number = params['From']
+  body = params['Body']
+
   content_type 'text/xml'
 
   "<Response>
-  <Message>
-  Hello #{number} you said #{body}
-  </Message>
+    <Message>
+      Hello #{number}. you said: #{body}
+    </Message>
   </Response>"
 end
 
